@@ -29,10 +29,24 @@ header {
   text-align: center;
 }
 
-section {
-  border: 2px solid black;
-  width: 70vh;
-  height: 70vh;
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(7, 110px);
+  grid-template-rows: repeat(6, 110px);
+  width: 810px;
+  height: 700px;
   margin: 0 auto;
+  justify-content: center;
+  background-color: black;
+  padding-top: 20px;
 }
+
+.bubble {
+  border-radius: 50%; 
+  background-color: white;
+  border: 2px solid black;
+  outline: 2px solid black;
+}
+
 
