@@ -20,7 +20,7 @@
 - [ ] click function to bring up reset button, check if bubble is taken(if not, assign value of turn to array index), checks for winner, switches player turn, calls render to update style, update message to show whose turn it is or who won if win is true
 
 - [ ] check winner function to see if any winning array has been met, assigns win to whoever won, updates message to congratulate, and updates game info
-
+ 
 - [ ] update winner function to take winning info, update total games played and player wins
 
 - [ ] game info will include games played and number of games won by each player
