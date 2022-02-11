@@ -81,5 +81,12 @@ function render() {
       bubbles[index].style.backgroundColor = 'white'
     }
   })
+  if(winner === null) {
+    if (turn === 1) {
+      message.innerHTML = 'player ones turn'
+    } else if (turn === -1) {
+      message.innerHTML = 'player two turn'
+    }
+  }
 }
 
