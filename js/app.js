@@ -36,9 +36,15 @@ const players = {
   }
 }
 
+const gameInfo = {
+  gamesPlayed = 0,
+  playerOneWins = 0,
+  playerTwoWins = 0,
+}
+
 
 /*---------------------------- Variables (state) ----------------------------*/
-
+let turn, board, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
