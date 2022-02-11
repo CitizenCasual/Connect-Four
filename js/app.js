@@ -60,17 +60,26 @@ let infoBtn = document.querySelector('#info')
 
 
 /*-------------------------------- Functions --------------------------------*/
-function init() {
-  board = 
-  [null, null, null, null, null, null, null,
-   null, null, null, null, null, null, null, 
-   null, null, null, null, null, null, null, 
-   null, null, null, null, null, null, null, 
-   null, null, null, null, null, null, null, 
-   null, null, null, null, null, null, null,]
+init()
 
-   turn = 1
-   winner = null
-  //  render()
+function init() {
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,]
+
+
+  turn = 1
+  winner = null
+  render()
+}
+
+function render() {
+  board.forEach(function(bubble, index) {
+    if(bubble === 1) {
+      bubbles[index].style.backgroundColor = 'red'
+    } else if(bubble === -1) {
+      bubbles[index].style.backgroundColor = 'yellow'
+    } else {
+      bubbles[index].style.backgroundColor = 'white'
+    }
+  })
 }
 
