@@ -50,9 +50,10 @@ let turn, board, winner
 /*------------------------ Cached Element References ------------------------*/
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
-let bubbles = document.querySelectorAll('.bubble')
+// let bubbles = document.querySelectorAll('.bubble')
 let message = document.querySelectorAll('h3')
 let infoBtn = document.querySelector('#info')
+let playBoard = document.querySelector('#board')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -68,25 +69,39 @@ function init() {
 
   turn = 1
   winner = null
-  render()
+  // render()
+  makeBoard()
 }
 
-function render() {
-  board.forEach(function(bubble, index) {
-    if(bubble === 1) {
-      bubbles[index].style.backgroundColor = 'red'
-    } else if(bubble === -1) {
-      bubbles[index].style.backgroundColor = 'yellow'
-    } else {
-      bubbles[index].style.backgroundColor = 'white'
-    }
+// function render() {
+//   board.forEach(function(bubble, index) {
+//     if(bubble === 1) {
+//       bubbles[index].style.backgroundColor = 'red'
+//     } else if(bubble === -1) {
+//       bubbles[index].style.backgroundColor = 'yellow'
+//     } else {
+//       bubbles[index].style.backgroundColor = 'white'
+//     }
+//   })
+//   if(winner === null) {
+//     if (turn === 1) {
+//       message.innerHTML = 'player ones turn'
+//     } else if (turn === -1) {
+//       message.innerHTML = 'player two turn'
+//     }
+//   }
+// }
+
+
+function makeBoard() {
+  // for (let index = 0; index < 42; index++) {
+  //   let bubbles = document.createElement('div')
+  //   bubbles.classList.add('bubble')
+  //   playBoard.appendChild(bubbles)
+  // }
+  board.forEach(function() {
+    let bubbles = document.createElement('div')
+    bubbles.classList.add('bubble')
+    playBoard.appendChild(bubbles)
   })
-  if(winner === null) {
-    if (turn === 1) {
-      message.innerHTML = 'player ones turn'
-    } else if (turn === -1) {
-      message.innerHTML = 'player two turn'
-    }
-  }
 }
-
