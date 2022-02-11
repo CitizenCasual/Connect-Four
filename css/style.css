@@ -38,7 +38,7 @@ header {
   height: 700px;
   margin: 0 auto;
   justify-content: center;
-  background-color: black;
+  background-color: blue;
   padding-top: 20px;
 }
 
@@ -48,5 +48,11 @@ header {
   border: 2px solid black;
   outline: 2px solid black;
 }
+
+.bubble:hover {
+  background-color: red;
+}
+
+
 
 

@@ -37,9 +37,9 @@ const players = {
 }
 
 const gameInfo = {
-  gamesPlayed = 0,
-  playerOneWins = 0,
-  playerTwoWins = 0,
+  gamesPlayed: 0,
+  playerOneWins: 0,
+  playerTwoWins: 0,
 }
 
 
@@ -48,7 +48,11 @@ let turn, board, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-
+let playBtn = document.querySelector('#play')
+let resetBtn = document.querySelector('#reset')
+let bubbles = document.querySelectorAll('.bubble')
+let message = document.querySelectorAll('h3')
+let infoBtn = document.querySelector('#info')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -56,3 +60,14 @@ let turn, board, winner
 
 
 /*-------------------------------- Functions --------------------------------*/
+function init() {
+  board = 
+  [null, null, null, null, null, null, null,
+   null, null, null, null, null, null, null, 
+   null, null, null, null, null, null, null, 
+   null, null, null, null, null, null, null, 
+   null, null, null, null, null, null, null, 
+   null, null, null, null, null, null, null,]
+}
+
+console.log(board);
