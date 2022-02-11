@@ -68,6 +68,9 @@ function init() {
    null, null, null, null, null, null, null, 
    null, null, null, null, null, null, null, 
    null, null, null, null, null, null, null,]
+
+   turn = 1
+   winner = null
+  //  render()
 }
 
-console.log(board);
