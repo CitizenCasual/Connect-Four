@@ -91,4 +91,7 @@ function handleClick(evt) {
   let index = evt.target.id
   board[index] = turn
   turn = turn * -1
+  if (board[index] !== null) {
+    return;
+  }
 }
