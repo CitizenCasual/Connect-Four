@@ -57,7 +57,7 @@ let playBoard = document.querySelector('#board')
 
 /*----------------------------- Event Listeners -----------------------------*/
 playBoard.addEventListener('click', function(evt) {
-  console.log('hello');
+  handleClick(evt)
 })
 
 
@@ -70,6 +70,7 @@ function makeBoard() {
     bubbles.classList.add('bubble')
     playBoard.appendChild(bubbles)
     board.push(bubbles)
+    bubbles.setAttribute('id', index)
   }
 }
 
@@ -100,4 +101,7 @@ function init() {
 //         }
 //       }
 
-
+function handleClick(evt) {
+  let id = evt.target.id
+  console.log(id);
+}
