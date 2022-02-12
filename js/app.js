@@ -64,23 +64,21 @@ let playBoard = document.querySelector('#board')
 init()
 
 function init() {
-  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,]
-
-
+  board = []
   turn = 1
   winner = null
-  // render()
   makeBoard()
+  // render()
 }
 
 // function render() {
 //   board.forEach(function(bubble, index) {
 //     if(bubble === 1) {
-//       bubbles[index].style.backgroundColor = 'red'
+//       playBoard[index].style.backgroundColor = 'red'
 //     } else if(bubble === -1) {
-//       bubbles[index].style.backgroundColor = 'yellow'
+//       playBoard[index].style.backgroundColor = 'yellow'
 //     } else {
-//       bubbles[index].style.backgroundColor = 'white'
+//       playBoard[index].style.backgroundColor = 'white'
 //     }
 //   })
 //   if(winner === null) {
@@ -94,14 +92,11 @@ function init() {
 
 
 function makeBoard() {
-  // for (let index = 0; index < 42; index++) {
-  //   let bubbles = document.createElement('div')
-  //   bubbles.classList.add('bubble')
-  //   playBoard.appendChild(bubbles)
-  // }
-  board.forEach(function() {
+  for (let index = 0; index < 42; index++) {
     let bubbles = document.createElement('div')
     bubbles.classList.add('bubble')
     playBoard.appendChild(bubbles)
-  })
+    board.push(bubbles)
+  }
+
 }
