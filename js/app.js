@@ -50,46 +50,19 @@ let turn, board, winner
 /*------------------------ Cached Element References ------------------------*/
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
-// let bubbles = document.querySelectorAll('.bubble')
 let message = document.querySelectorAll('h3')
 let infoBtn = document.querySelector('#info')
 let playBoard = document.querySelector('#board')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-
+playBoard.addEventListener('click', function(evt) {
+  console.log('hello');
+})
 
 
 /*-------------------------------- Functions --------------------------------*/
 init()
-
-function init() {
-  board = []
-  turn = 1
-  winner = null
-  makeBoard()
-  // render()
-}
-
-// function render() {
-//   board.forEach(function(bubble, index) {
-//     if(bubble === 1) {
-//       playBoard[index].style.backgroundColor = 'red'
-//     } else if(bubble === -1) {
-//       playBoard[index].style.backgroundColor = 'yellow'
-//     } else {
-//       playBoard[index].style.backgroundColor = 'white'
-//     }
-//   })
-//   if(winner === null) {
-//     if (turn === 1) {
-//       message.innerHTML = 'player ones turn'
-//     } else if (turn === -1) {
-//       message.innerHTML = 'player two turn'
-//     }
-//   }
-// }
-
 
 function makeBoard() {
   for (let index = 0; index < 42; index++) {
@@ -98,5 +71,33 @@ function makeBoard() {
     playBoard.appendChild(bubbles)
     board.push(bubbles)
   }
-
 }
+
+function init() {
+  board = []
+  turn = players[1]
+  winner = null
+  makeBoard()
+  // render()
+}
+
+// function render() {
+//   board.forEach(function(bubble, index) {
+//     if(bubble === 1) {
+//       board[index].style.backgroundColor = 'red'
+//     } else if(bubble === -1) {
+//       board[index].style.backgroundColor = 'yellow'
+//     } else {
+//       board[index].style.backgroundColor = 'white'
+//     }
+//   })
+//   if(winner === null) {
+//       if (turn === 1) {
+//           message.innerHTML = 'player ones turn'
+//         } else if (turn === -1) {
+//             message.innerHTML = 'player two turn'
+//           }
+//         }
+//       }
+
+
