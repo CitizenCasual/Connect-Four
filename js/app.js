@@ -25,16 +25,16 @@ const winningCombos = [
 [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34],
 ]
 
-const players = {
-  '1': {
-    name: 'Player One',
-    gamesWon: 0,
-  },
-  '-1': {
-    name: 'Player Two',
-    gamesWon: 0,
-  }
-}
+// const players = {
+//   '1': {
+//     name: 'Player One',
+//     gamesWon: 0,
+//   },
+//   '-1': {
+//     name: 'Player Two',
+//     gamesWon: 0,
+//   }
+// }
 
 const gameInfo = {
   gamesPlayed: 0,
@@ -76,32 +76,19 @@ function makeBoard() {
 
 function init() {
   board = []
-  turn = players[1]
+  turn = 1
   winner = null
   makeBoard()
-  // render()
 }
 
-// function render() {
-//   board.forEach(function(bubble, index) {
-//     if(bubble === 1) {
-//       board[index].style.backgroundColor = 'red'
-//     } else if(bubble === -1) {
-//       board[index].style.backgroundColor = 'yellow'
-//     } else {
-//       board[index].style.backgroundColor = 'white'
-//     }
-//   })
-//   if(winner === null) {
-//       if (turn === 1) {
-//           message.innerHTML = 'player ones turn'
-//         } else if (turn === -1) {
-//             message.innerHTML = 'player two turn'
-//           }
-//         }
-//       }
+function render() {
+  
+}
+
+
 
 function handleClick(evt) {
-  let id = evt.target.id
-  console.log(id);
+  let index = evt.target.id
+  board[index] = turn
+  turn = turn * -1
 }
