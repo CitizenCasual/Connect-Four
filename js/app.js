@@ -83,8 +83,16 @@ function init() {
 
 
 
+
+
 function handleClick(evt) {
-  let bubbles = evt.target.className
-  console.log(bubbles);
+  let bubble = evt.target
+  if (turn === 1) {
+    turn *= -1
+    bubble.classList.add('player-one')
+  } else if (turn === -1) {
+    turn *= -1
+    bubble.classList.add('player-two')
+  }
 }
 
