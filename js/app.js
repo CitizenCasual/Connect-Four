@@ -50,7 +50,7 @@ let turn, board, winner
 /*------------------------ Cached Element References ------------------------*/
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
-let message = document.querySelectorAll('h3')
+let message = document.querySelector('h3')
 let infoBtn = document.querySelector('#info')
 let playBoard = document.querySelector('#board')
 
@@ -91,9 +91,11 @@ function handleClick(evt) {
   if (turn === 1) {
     turn *= -1
     bubble.classList.add('player-one')
+    message.innerHTML = 'Player Two\'s turn'
   } else if (turn === -1) {
     turn *= -1
     bubble.classList.add('player-two')
+    message.innerHTML = 'Player One\'s turn'
   }
 }
 
