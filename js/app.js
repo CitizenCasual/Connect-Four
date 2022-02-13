@@ -79,29 +79,12 @@ function init() {
   turn = 1
   winner = null
   makeBoard()
-  // render()
 }
-
-// function render() {
-//   board.forEach(function(bubbles, index) {
-//     if (board[index] === 1) {
-//       bubbles.style.backgroundColor = 'red'
-//     } else if (board[index] === -1) {
-//       bubbles.style.backgroundColor = 'yellow'
-//     } else {
-//       bubbles.style.backgroundColor = 'white'
-//     }
-//   })
-// }
 
 
 
 function handleClick(evt) {
-  let index = evt.target.id
-  board[index] = turn
-  if (board[index] !== null) {
-    return;
-  }
-  turn = turn * -1
-  // render()
+  let bubbles = evt.target.className
+  console.log(bubbles);
 }
+
