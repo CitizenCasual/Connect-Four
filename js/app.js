@@ -72,14 +72,13 @@ function makeBoard() {
     bubbles.setAttribute('id', index)
     if (index >= 42) {
       bubbles.classList.add('taken')
+      bubbles.classList.add('filled')
     }
     playBoard.appendChild(bubbles)
-    board.push(bubbles)
   }
 }
 
 function init() {
-  board = []
   winner = null
   turn = 1
   makeBoard()
