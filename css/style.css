@@ -48,7 +48,6 @@ header {
   background-color: grey;
 }
 
-
 .player-one {
   background: red;
 }
@@ -56,8 +55,6 @@ header {
 .player-two {
   background: yellow;
 }
-
-
 
 .filled {
   display: none;

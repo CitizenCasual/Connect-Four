@@ -91,10 +91,12 @@ function handleClick(evt) {
     if (turn === 1) {
       bubbles[index].classList.add('player-one')
       bubbles[index].classList.add('taken')
+      message.innerHTML = 'Player Two\'s turn'
       turn = -1
     } else if (turn === -1) {
       bubbles[index].classList.add('player-two')
       bubbles[index].classList.add('taken')
+      message.innerHTML = 'Player One\'s turn'
       turn = 1
     }
   } else {
