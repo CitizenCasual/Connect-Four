@@ -67,8 +67,8 @@ function makeBoard() {
     let bubbles = document.createElement('div')
     bubbles.classList.add('bubble')
     playBoard.appendChild(bubbles)
-    board.push(bubbles)
     bubbles.setAttribute('id', index)
+    board.push(bubbles)
     bubbles.addEventListener('click', function(evt) {
       handleClick(evt)
     })
@@ -77,25 +77,13 @@ function makeBoard() {
 
 function init() {
   board = []
-  turn = 1
   winner = null
   makeBoard()
 }
 
-
-
-
-
 function handleClick(evt) {
-  let bubble = evt.target
-  if (turn === 1) {
-    turn *= -1
-    bubble.classList.add('player-one')
-    message.innerHTML = 'Player Two\'s turn'
-  } else if (turn === -1) {
-    turn *= -1
-    bubble.classList.add('player-two')
-    message.innerHTML = 'Player One\'s turn'
-  }
+  
 }
+
+
 
