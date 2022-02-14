@@ -31,7 +31,7 @@ const gameInfo = {
   playerTwoWins: 0,
 }
 
-let turn, winner
+let turn, winner, playerOne, playerTwo
 
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
@@ -57,8 +57,8 @@ function makeBoard() {
 }
 
 function init() {
-  winner = null
   turn = 1
+  winner = null
   makeBoard()
 }
 
@@ -80,11 +80,39 @@ function handleClick(evt) {
   } else {
     alert('You can\'t go there!!')
   }
+  if (winner !== null) {
+    return;
+  }
+  checkWinner()
 }
 
 function checkWinner() {
-  
+  let bubbles = document.querySelectorAll('#board div')
+  for (let index = 0; index < winningCombos.length; index++) {
+    const bubble = winningCombos[index]
+    if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
+      alert('Player One Wins!')
+      winner = playerOne
+      updateWinner()
+    } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
+      alert('Player Two Wins!')
+      winner = playerTwo
+      updateWinner()
+    }
+  }
 }
+
+function updateWinner() {
+  gameInfo.gamesPlayed += 1 
+  if (winner === playerOne) {
+    gameInfo.playerOneWins += 1
+  } 
+  if (winner === playerTwo) {
+    gameInfo.playerTwoWins += 1
+  }
+}
+
+
 
 
 
