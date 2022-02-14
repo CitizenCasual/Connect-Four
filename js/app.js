@@ -25,44 +25,22 @@ const winningCombos = [
 [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34],
 ]
 
-// const players = {
-//   '1': {
-//     name: 'Player One',
-//     gamesWon: 0,
-//   },
-//   '-1': {
-//     name: 'Player Two',
-//     gamesWon: 0,
-//   }
-// }
-
 const gameInfo = {
   gamesPlayed: 0,
   playerOneWins: 0,
   playerTwoWins: 0,
 }
 
+let turn, winner
 
-/*---------------------------- Variables (state) ----------------------------*/
-let turn, board, winner
-
-
-/*------------------------ Cached Element References ------------------------*/
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
 let message = document.querySelector('h3')
 let infoBtn = document.querySelector('#info')
 let playBoard = document.querySelector('#board')
 
-
-
-/*----------------------------- Event Listeners -----------------------------*/
 playBoard.addEventListener('click', handleClick)
 
-
-
-
-/*-------------------------------- Functions --------------------------------*/
 init()
 
 function makeBoard() {
@@ -102,6 +80,10 @@ function handleClick(evt) {
   } else {
     alert('You can\'t go there!!')
   }
+}
+
+function checkWinner() {
+  
 }
 
 
