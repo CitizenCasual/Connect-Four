@@ -89,7 +89,15 @@ function handleClick(evt) {
   let bubbles = document.querySelectorAll('#board div')
   let index = parseInt(evt.target.id)
   if (bubbles[index + 7].classList.contains('taken') && !bubbles[index].classList.contains('taken')) {
-    
+    if (turn === 1) {
+      bubbles[index].classList.add('player-one')
+      bubbles[index].classList.add('taken')
+      turn = -1
+    } else if (turn === -1) {
+      bubbles[index].classList.add('player-two')
+      bubbles[index].classList.add('taken')
+      turn = 1
+    }
   } else {
     alert('You can\'t go there!!')
   }
