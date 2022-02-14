@@ -36,13 +36,16 @@ let turn, winner, playerOne, playerTwo
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
 let message = document.querySelector('h3')
-let infoBtn = document.querySelector('#info')
+let infoBtn = document.querySelector('.btn')
 let playBoard = document.querySelector('#board')
+
 
 
 
 playBoard.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', reset)
+
+
 
 
 init()
