@@ -55,7 +55,10 @@ let infoBtn = document.querySelector('#info')
 let playBoard = document.querySelector('#board')
 
 
+
 /*----------------------------- Event Listeners -----------------------------*/
+playBoard.addEventListener('click', handleClick)
+
 
 
 
@@ -63,27 +66,36 @@ let playBoard = document.querySelector('#board')
 init()
 
 function makeBoard() {
-  for (let index = 0; index < 42; index++) {
+  for (let index = 0; index < 49; index++) {
     let bubbles = document.createElement('div')
     bubbles.classList.add('bubble')
-    playBoard.appendChild(bubbles)
     bubbles.setAttribute('id', index)
+    if (index >= 42) {
+      bubbles.classList.add('taken')
+    }
+    playBoard.appendChild(bubbles)
     board.push(bubbles)
-    bubbles.addEventListener('click', function(evt) {
-      handleClick(evt)
-    })
   }
 }
 
 function init() {
   board = []
   winner = null
+  turn = 1
   makeBoard()
 }
 
 function handleClick(evt) {
-  
+  let bubbles = document.querySelectorAll('#board div')
+  let index = parseInt(evt.target.id)
+  if (bubbles[index + 7].classList.contains('taken') && !bubbles[index].classList.contains('taken')) {
+    
+  } else {
+    alert('You can\'t go there!!')
+  }
 }
+
+
 
 
 
