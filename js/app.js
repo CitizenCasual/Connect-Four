@@ -46,6 +46,7 @@ resetBtn.addEventListener('click', reset)
 
 
 init()
+makeBoard()
 
 function makeBoard() {
   for (let index = 0; index < 49; index++) {
@@ -63,7 +64,6 @@ function makeBoard() {
 function init() {
   turn = 1
   winner = null
-  makeBoard()
 }
 
 function handleClick(evt) {
