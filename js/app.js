@@ -39,7 +39,11 @@ let message = document.querySelector('h3')
 let infoBtn = document.querySelector('#info')
 let playBoard = document.querySelector('#board')
 
+
+
 playBoard.addEventListener('click', handleClick)
+resetBtn.addEventListener('click', reset)
+
 
 init()
 
@@ -63,6 +67,7 @@ function init() {
 }
 
 function handleClick(evt) {
+  resetBtn.removeAttribute('hidden')
   let bubbles = document.querySelectorAll('#board div')
   let index = parseInt(evt.target.id)
   if (bubbles[index + 7].classList.contains('taken') && !bubbles[index].classList.contains('taken')) {
@@ -80,9 +85,7 @@ function handleClick(evt) {
   } else {
     alert('You can\'t go there!!')
   }
-  if (winner !== null) {
-    return;
-  }
+  
   checkWinner()
 }
 
@@ -93,23 +96,29 @@ function checkWinner() {
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
       alert('Player One Wins!')
       winner = playerOne
-      updateWinner()
+      
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
       alert('Player Two Wins!')
       winner = playerTwo
-      updateWinner()
+    }
+    if (winner !== null) {
+      return;
     }
   }
+  updateWinner()
 }
 
 function updateWinner() {
   gameInfo.gamesPlayed += 1 
   if (winner === playerOne) {
     gameInfo.playerOneWins += 1
-  } 
-  if (winner === playerTwo) {
+  } else if (winner === playerTwo) {
     gameInfo.playerTwoWins += 1
   }
+}
+
+function reset() {
+  init()
 }
 
 
