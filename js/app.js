@@ -1,4 +1,3 @@
-/*-------------------------------- Constants --------------------------------*/
 const winningCombos = [
 [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
 [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
@@ -31,7 +30,7 @@ const gameInfo = {
   playerTwoWins: 0,
 }
 
-let turn, winner
+let turn
 
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
@@ -41,17 +40,8 @@ let playBoard = document.querySelector('#board')
 let winModal = document.querySelector('#staticBackdrop-win')
 let modalMessage = document.querySelector('.modal-body-win')
 
-
-
-
 playBoard.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', reset)
-
-
-
-
-
-
 
 init()
 
@@ -70,7 +60,6 @@ function makeBoard() {
 
 function init() {
   turn = 1
-  winner = null
   makeBoard()
 }
 
@@ -93,7 +82,6 @@ function handleClick(evt) {
   } else {
     alert('You can\'t go there!!')
   }
-  
   checkWinner()
 }
 
@@ -102,28 +90,13 @@ function checkWinner() {
   for (let index = 0; index < winningCombos.length; index++) {
     const bubble = winningCombos[index]
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
-      // alert('Player One wins!')
       modalMessage.innerHTML = 'Player One Won!'
       $('#staticBackdropWin').modal('show')
       
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
-      // alert('Player Two wins!')
       modalMessage.innerHTML = 'Player Two Won!'
       $('#staticBackdropWin').modal('show')
     }
-    if (winner !== null) {
-      return;
-    }
-  }
-  updateWinner()
-}
-
-function updateWinner() {
-  gameInfo.gamesPlayed += 1 
-  if (winner === playerOne) {
-    gameInfo.playerOneWins += 1
-  } else if (winner === playerTwo) {
-    gameInfo.playerTwoWins += 1
   }
 }
 
