@@ -32,10 +32,8 @@ const gameInfo = {
 
 let turn
 
-let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
 let message = document.querySelector('h3')
-let infoBtn = document.querySelector('.btn')
 let playBoard = document.querySelector('#board')
 let winModal = document.querySelector('#staticBackdrop-win')
 let modalMessage = document.querySelector('.modal-body-win')
@@ -51,8 +49,7 @@ function makeBoard() {
     bubbles.classList.add('bubble')
     bubbles.setAttribute('id', index)
     if (index >= 42) {
-      bubbles.classList.add('taken')
-      bubbles.classList.add('filled')
+      bubbles.classList.add('taken', 'filled')
     }
     playBoard.appendChild(bubbles)
   }
@@ -64,18 +61,15 @@ function init() {
 }
 
 function handleClick(evt) {
-  resetBtn.removeAttribute('hidden')
   let bubbles = document.querySelectorAll('#board div')
   let index = parseInt(evt.target.id)
   if (bubbles[index + 7].classList.contains('taken') && !bubbles[index].classList.contains('taken')) {
     if (turn === 1) {
-      bubbles[index].classList.add('player-one')
-      bubbles[index].classList.add('taken')
+      bubbles[index].classList.add('player-one', 'taken')
       message.innerHTML = 'Player Two\'s turn'
       turn = -1
     } else if (turn === -1) {
-      bubbles[index].classList.add('player-two')
-      bubbles[index].classList.add('taken')
+      bubbles[index].classList.add('player-two', 'taken')
       message.innerHTML = 'Player One\'s turn'
       turn = 1
     }

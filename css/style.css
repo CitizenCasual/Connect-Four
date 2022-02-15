@@ -61,6 +61,11 @@ header {
   display: none;
 }
 
+.modal-body {
+  text-align: center;
+  font-weight: bold;
+}
+
 
 
 
