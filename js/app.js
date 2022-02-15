@@ -38,6 +38,8 @@ let resetBtn = document.querySelector('#reset')
 let message = document.querySelector('h3')
 let infoBtn = document.querySelector('.btn')
 let playBoard = document.querySelector('#board')
+let winModal = document.querySelector('#staticBackdrop-win')
+let modalMessage = document.querySelector('.modal-body-win')
 
 
 
@@ -100,11 +102,11 @@ function checkWinner() {
   for (let index = 0; index < winningCombos.length; index++) {
     const bubble = winningCombos[index]
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
-      alert('Player One Wins!')
+      alert('Player One wins!')
       winner = playerOne
       
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
-      alert('Player Two Wins!')
+      alert('Player Two wins!')
       winner = playerTwo
     }
     if (winner !== null) {
