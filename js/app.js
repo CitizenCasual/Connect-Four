@@ -126,6 +126,7 @@ function updateWinner() {
 function reset() {
   playBoard.innerHTML = ''
   init()
+  resetBtn.style.display = 'none'
 }
 
 
