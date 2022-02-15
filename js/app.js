@@ -102,11 +102,13 @@ function checkWinner() {
   for (let index = 0; index < winningCombos.length; index++) {
     const bubble = winningCombos[index]
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
-      alert('Player One wins!')
+      // alert('Player One wins!')
+      $('#staticBackdropWin').modal('show')
       winner = playerOne
       
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
-      alert('Player Two wins!')
+      // alert('Player Two wins!')
+      $('#staticBackdropWin').modal('show')
       winner = playerTwo
     }
     if (winner !== null) {
