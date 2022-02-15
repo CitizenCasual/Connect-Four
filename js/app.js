@@ -31,7 +31,7 @@ const gameInfo = {
   playerTwoWins: 0,
 }
 
-let turn, winner, playerOne, playerTwo
+let turn, winner
 
 let playBtn = document.querySelector('#play')
 let resetBtn = document.querySelector('#reset')
@@ -103,13 +103,13 @@ function checkWinner() {
     const bubble = winningCombos[index]
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
       // alert('Player One wins!')
+      modalMessage.innerHTML = 'Player One Won!'
       $('#staticBackdropWin').modal('show')
-      winner = playerOne
       
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
       // alert('Player Two wins!')
+      modalMessage.innerHTML = 'Player Two Won!'
       $('#staticBackdropWin').modal('show')
-      winner = playerTwo
     }
     if (winner !== null) {
       return;
@@ -130,7 +130,6 @@ function updateWinner() {
 function reset() {
   playBoard.innerHTML = ''
   init()
-  resetBtn.style.display = 'none'
 }
 
 
