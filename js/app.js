@@ -24,12 +24,6 @@ const winningCombos = [
 [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34],
 ]
 
-const gameInfo = {
-  gamesPlayed: 0,
-  playerOneWins: 0,
-  playerTwoWins: 0,
-}
-
 let turn
 
 let resetBtn = document.querySelector('#reset')
@@ -86,7 +80,6 @@ function checkWinner() {
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
       modalMessage.innerHTML = 'Player One Won!'
       $('#staticBackdropWin').modal('show')
-      
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
       modalMessage.innerHTML = 'Player Two Won!'
       $('#staticBackdropWin').modal('show')
