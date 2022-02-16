@@ -26,6 +26,7 @@ const winningCombos = [
 
 let turn
 
+let playBtn = document.querySelector('#play-button')
 let resetBtn = document.querySelector('#reset')
 let message = document.querySelector('h3')
 let playBoard = document.querySelector('#board')
@@ -34,6 +35,9 @@ let modalMessage = document.querySelector('.modal-body-win')
 
 playBoard.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', reset)
+playBtn.addEventListener('click', function() {
+  message.innerHTML = 'Player One\'s turn'
+})
 
 init()
 
@@ -91,10 +95,3 @@ function reset() {
   playBoard.innerHTML = ''
   init()
 }
-
-
-
-
-
-
-
