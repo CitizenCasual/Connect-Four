@@ -24,6 +24,12 @@ const winningCombos = [
 [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34],
 ]
 
+const gameInfo = {
+  gamesPlayed: 0,
+  playerOneWins: 0,
+  playerTwoWins: 0,
+}
+
 let turn
 
 let playBtn = document.querySelector('#play-button')
@@ -84,9 +90,11 @@ function checkWinner() {
     if (bubble.every(x => bubbles[x].classList.contains('player-one'))) {
       modalMessage.innerHTML = 'Player One Won!'
       $('#staticBackdropWin').modal('show')
+      updateInfo()
     } else if (bubble.every(x => bubbles[x].classList.contains('player-two'))) {
       modalMessage.innerHTML = 'Player Two Won!'
       $('#staticBackdropWin').modal('show')
+      updateInfo()
     }
   }
 }
@@ -94,4 +102,14 @@ function checkWinner() {
 function reset() {
   playBoard.innerHTML = ''
   init()
+}
+
+function updateInfo() {
+  if (turn === 1) {
+    gameInfo.gamesPlayed += 1
+    gameInfo.playerTwoWins += 1
+  } else if (turn === -1) {
+    gameInfo.gamesPlayed += 1
+    gameInfo.playerOneWins += 1
+  }
 }
