@@ -38,11 +38,15 @@ let message = document.querySelector('h3')
 let playBoard = document.querySelector('#board')
 let winModal = document.querySelector('#staticBackdrop-win')
 let modalMessage = document.querySelector('.modal-body-win')
+let infoModal = document.querySelector('#infoModal')
 
 playBoard.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', reset)
 playBtn.addEventListener('click', function() {
   message.innerHTML = 'Player One\'s turn'
+})
+infoModal.addEventListener('click', function() {
+  $('#exampleModal').modal('show')
 })
 
 init()

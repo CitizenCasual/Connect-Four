@@ -19,14 +19,34 @@
 <body>
   <header id="message">
     <h1>Connect 4 in a row to win!</h1>
+    <!--Info Modal-->
+    <button type="button" class="btn btn-primary" id='infoModal' data-toggle="modal" data-target="#exampleModal">
+      Game Stats
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Game Stats</h5>
+              <span aria-hidden="true">&times;</span>
+          </div>
+          <div id="stat-modal">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
       <h3></h3>
     </header>
     <div id="board"></div>
-<!-- Modal -->
+<!--Start Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body-start">
         Grab a friend and press Play to start!
       </div>
       <div class="modal-footer">
