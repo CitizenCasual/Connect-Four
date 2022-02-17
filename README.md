@@ -10,11 +10,11 @@ My deployed version can be found here -
 https://laughing-ptolemy-adff30.netlify.app/
 
 ### Screenshots:
-![Start Screen](https://i.imgur.com/SZQn1n5.png)
+![Start Screen](https://i.imgur.com/GsAtHPR.png)
 
-![Invalid Move Alert](https://i.imgur.com/qR6c4RW.png)
+![Invalid Move Alert](https://i.imgur.com/KCEThPQ.png)
 
-![Win Message](https://i.imgur.com/mS2V4Hi.png)
+![Win Message](https://i.imgur.com/PG66Yyq.png)
 
 ### Technologies Used:
 1. JavaScript
