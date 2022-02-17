@@ -75,6 +75,7 @@ function makeBoard() {
 function init() {
   turn = 1
   makeBoard()
+  message.innerHTML = 'Player One\'s turn'
 }
 
 function handleClick(evt) {
