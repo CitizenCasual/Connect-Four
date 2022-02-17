@@ -1,4 +1,4 @@
-# Unit 1 Project - Connect Four
+# Connect Four
 
 Connect Four is a turn-based game where each player attempts to align **four** of their play disks, each a different color, before their opponent. In the physical form of the game, gravity assits and brings each down to the very bottom of the tray, allowing others to be stacked on top and winning combinations achieved. Connect Four is also commonly known as Four up, Plot Four, Captain's Mistress, or Four in a Row. 
 
