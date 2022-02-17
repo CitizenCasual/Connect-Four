@@ -57,6 +57,7 @@ infoModal.addEventListener('click', function() {
    </ul>`
 })
 
+
 init()
 
 function makeBoard() {
