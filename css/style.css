@@ -61,7 +61,7 @@ header {
   display: none;
 }
 
-.modal-body {
+.modal-body-start {
   text-align: center;
   font-weight: bold;
   font-size: 30px;

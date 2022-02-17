@@ -39,12 +39,22 @@ let playBoard = document.querySelector('#board')
 let winModal = document.querySelector('#staticBackdrop-win')
 let modalMessage = document.querySelector('.modal-body-win')
 let infoModal = document.querySelector('#infoModal')
+let stats = document.querySelector('#game-stats')
+
 
 playBoard.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', reset)
 playBtn.addEventListener('click', function() {
   message.innerHTML = 'Player One\'s turn'
 })
+infoModal.addEventListener('click', function() {
+  $('#exampleModalInfo').modal('show')
+  stats.innerHTML = 
+  `Games Played: ${gameInfo.gamesPlayed}
+   Player One Wins: ${gameInfo.playerOneWins}
+   Player Two Wins: ${gameInfo.playerTwoWins}`
+})
+
 
 
 init()
