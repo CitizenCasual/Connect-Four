@@ -40,7 +40,7 @@ let winModal = document.querySelector('#staticBackdrop-win')
 let modalMessage = document.querySelector('.modal-body-win')
 let infoModal = document.querySelector('#infoModal')
 let stats = document.querySelector('#game-stats')
-
+const coinSound = new Audio('../audio/mixkit-bag-of-coins-touch-3187.wav')
 
 playBoard.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', reset)
@@ -50,12 +50,12 @@ playBtn.addEventListener('click', function() {
 infoModal.addEventListener('click', function() {
   $('#exampleModalInfo').modal('show')
   stats.innerHTML = 
-  `Games Played: ${gameInfo.gamesPlayed}
-   Player One Wins: ${gameInfo.playerOneWins}
-   Player Two Wins: ${gameInfo.playerTwoWins}`
+  `<ul>
+    <li>Games Played: ${gameInfo.gamesPlayed}</li>
+    <li>Player One Wins: ${gameInfo.playerOneWins}</li>
+    <li>Player Two Wins: ${gameInfo.playerTwoWins}</li>
+   </ul>`
 })
-
-
 
 init()
 
@@ -79,6 +79,7 @@ function init() {
 function handleClick(evt) {
   let bubbles = document.querySelectorAll('#board div')
   let index = parseInt(evt.target.id)
+  playSound()
   if (bubbles[index + 7].classList.contains('taken') && !bubbles[index].classList.contains('taken')) {
     if (turn === 1) {
       bubbles[index].classList.add('player-one', 'taken')
@@ -124,4 +125,9 @@ function updateInfo() {
     gameInfo.gamesPlayed += 1
     gameInfo.playerOneWins += 1
   }
+}
+
+function playSound() {
+  coinSound.volume = .30
+  coinSound.play()
 }

@@ -20,7 +20,16 @@ body {
 }
 
 header {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
 }
 
 #board {
@@ -71,6 +80,22 @@ header {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+}
+
+.modal-body-info {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#infoModal {
+  width: 40px;
+  height: 40px;
+  align-self: flex-end;
+  border-radius: 50%;
+  background-color: grey;
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
 
 
