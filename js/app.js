@@ -54,7 +54,7 @@ infoModal.addEventListener('click', function() {
     <li>Games Played: ${gameInfo.gamesPlayed}</li>
     <li>Player One Wins: ${gameInfo.playerOneWins}</li>
     <li>Player Two Wins: ${gameInfo.playerTwoWins}</li>
-   </ul>`
+  </ul>`
 })
 
 
