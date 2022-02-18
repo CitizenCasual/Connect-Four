@@ -50,7 +50,7 @@ playBtn.addEventListener('click', function() {
 infoModal.addEventListener('click', function() {
   $('#exampleModalInfo').modal('show')
   stats.innerHTML = 
-  `<ul>
+  `<ul id='list'>
     <li>Games Played: ${gameInfo.gamesPlayed}</li>
     <li>Player One Wins: ${gameInfo.playerOneWins}</li>
     <li>Player Two Wins: ${gameInfo.playerTwoWins}</li>
