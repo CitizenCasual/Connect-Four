@@ -29,5 +29,6 @@ https://laughing-ptolemy-adff30.netlify.app/
 1. A gravity feature - Instead of prompting an invalid move, the disc would fall to the bottom on it's own.
 2. Adjustable Grid - Give the player the ability to assign desired grid size for the board.
 3. Different Style Themes - Allow the player to choose different themes for the board and discs. 
+4. A computer player - A bot to play against a human. 
 
 
